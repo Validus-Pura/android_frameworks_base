@@ -46,7 +46,7 @@ import android.view.KeyEvent;
 import android.widget.Toast;
 
 import com.android.internal.statusbar.IStatusBarService;
-import com.android.internal.util.cm.TorchConstants;
+import com.android.internal.util.paranoid.LightbulbConstants;
 import static com.android.internal.util.cm.NavigationRingConstants.*;
 import com.android.systemui.R;
 import com.android.systemui.screenshot.TakeScreenshotService;
@@ -156,7 +156,7 @@ public class ActionTarget {
             }
             return true;
         } else if (action.equals(ACTION_TORCH)) {
-            Intent intent = new Intent(TorchConstants.ACTION_TOGGLE_STATE);
+            Intent intent = new Intent(LightbulbConstants.ACTION_TOGGLE_STATE);
             mContext.sendBroadcast(intent);
             return true;
         } else {
