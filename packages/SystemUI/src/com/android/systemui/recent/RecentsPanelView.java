@@ -93,8 +93,6 @@ public class RecentsPanelView extends FrameLayout implements OnItemClickListener
     private int mRecentItemLayoutId;
     private boolean mHighEndGfx;
 
-    private RecentsActivity mRecentsActivity;
-
     public static interface RecentsScrollView {
         public int numItemsInOneScreenful();
         public void setAdapter(TaskDescriptionAdapter adapter);
@@ -684,6 +682,7 @@ public class RecentsPanelView extends FrameLayout implements OnItemClickListener
             am.moveTaskToFront(ad.taskId, ActivityManager.MOVE_TASK_WITH_HOME,
                     opts);
         } else {
+	    Intent intent = ad.intent;
             intent.addFlags(Intent.FLAG_ACTIVITY_LAUNCHED_FROM_HISTORY
                     | Intent.FLAG_ACTIVITY_TASK_ON_HOME
                     | Intent.FLAG_ACTIVITY_NEW_TASK);
